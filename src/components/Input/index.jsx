@@ -5,13 +5,15 @@ import { useState } from 'react';
 
 import getUSer from '../../Functions/GithubUser';
 
-export function Input() {
+
+function Input() {
 
   const [username, setUsername] = useState(" ");
-
+  
   function handleSearch() {
     const user = getUSer(username);
-    console.log(user)
+
+    /* CONTINUAR AQUI 24/10!! */
   }
 
   return(
@@ -21,9 +23,13 @@ export function Input() {
         placeholder="Username"
         onChange={e => setUsername(e.target.value)}
       />
-      <Button onClick={handleSearch}>
+      <Button 
+        onClick={handleSearch}
+      >
         <FiSearch />
       </Button>
     </Container>
   )
 }
+
+export { Input }
