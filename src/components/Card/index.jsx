@@ -6,7 +6,7 @@ import logo from "../../assets/logo.svg";
 
 export function Card() {
   return(
-    <Container>
+    <Container id="frame">
       <Inner>
         <header>
           <div>
