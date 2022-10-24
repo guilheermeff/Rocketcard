@@ -8,7 +8,7 @@ export default {
     GRAY_900: "#1A1A1A",
 
     WHITE: "#F1F1F1",
-    PURPLE: "#8257E5"
+    PURPLE: "#8257E6"
     
   }
 }
