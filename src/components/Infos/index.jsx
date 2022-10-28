@@ -1,7 +1,38 @@
-import { Container, List, Li } from "./styles";
+import { useState } from 'react';
+import { Container, List, Li, Button, Box } from "./styles";
 
-import { FiMapPin, FiUsers, } from 'react-icons/fi';
+import { FiMapPin, FiUsers, FiSearch } from 'react-icons/fi';
 import { BiBuildings, BiBookBookmark } from 'react-icons/bi';
+
+import getUSer from '../../Functions/GithubUser';
+
+export function Input() {
+
+  const [username, setUsername] = useState(" ");
+  
+  function handleSearch() {
+    getUSer(username);
+    return
+  }
+
+  return(
+    <Box>
+      <input 
+        type="text" 
+        placeholder="Username"
+        onChange={e => setUsername(e.target.value)}
+      />
+      <Button 
+        onClick={handleSearch}
+      >
+        <FiSearch />
+      </Button>
+    </Box>
+  )
+}
+
+const User = Input.handleSearch();
+console.log(User)
 
 export function Infos() {
   return(

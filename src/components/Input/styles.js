@@ -1,49 +1,49 @@
-import styled from 'styled-components';
 
-export const Container = styled.div`
 
-  background-color: #000000;
-  color: #FFFFFF;
+// export const Container = styled.div`
 
-  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_900};
-  border-radius: 15px;
+//   background-color: #000000;
+//   color: #FFFFFF;
 
-  padding: 16px 12px;
+//   border: 1px solid ${({ theme }) => theme.COLORS.GRAY_900};
+//   border-radius: 15px;
 
-  display: flex;
-  align-items: center;
+//   padding: 16px 12px;
 
-  > input {
+//   display: flex;
+//   align-items: center;
 
-    background-color: transparent;
-    border: 0;
-    color: #FFFFFF;
-    width: 200px;
+//   > input {
 
-    font-size: 15px;
-    line-height: 22px;
+//     background-color: transparent;
+//     border: 0;
+//     color: #FFFFFF;
+//     width: 200px;
 
-    &::placeholder {
-      color: #FFFFFF;
-      letter-spacing: -0.02em;
-    }
+//     font-size: 15px;
+//     line-height: 22px;
 
-    &:focus {
-      box-shadow: 0 0 0 0;
-      outline: 0;
-    }
-  }
-`;
+//     &::placeholder {
+//       color: #FFFFFF;
+//       letter-spacing: -0.02em;
+//     }
 
-export const Button = styled.button`
+//     &:focus {
+//       box-shadow: 0 0 0 0;
+//       outline: 0;
+//     }
+//   }
+// `;
 
-  background-color: ${({ theme }) => theme.COLORS.PURPLE};
-  border: 0;
-  border-radius: 50px;
+// export const Button = styled.button`
 
-  > svg {
-    font-size: 24px;
-    color: #000000;
-  }
-`;
+//   background-color: ${({ theme }) => theme.COLORS.PURPLE};
+//   border: 0;
+//   border-radius: 50px;
+
+//   > svg {
+//     font-size: 24px;
+//     color: #000000;
+//   }
+// `;
 
