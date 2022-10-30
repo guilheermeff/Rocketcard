@@ -8,13 +8,13 @@ import getUSer from '../../Functions/GithubUser';
 
 export function Input() {
 
-  const [username, setUsername] = useState(" ");
-  
-  function handleSearch() {
-    getUSer(username);
-    return
-  }
+  const [username, setUsername] = useState({});
 
+  function handleSearch() {
+    const user = getUSer(username);
+    return user;
+  }
+  
   return(
     <Box>
       <input 
@@ -30,9 +30,6 @@ export function Input() {
     </Box>
   )
 }
-
-const User = Input.handleSearch();
-console.log(User)
 
 export function Infos() {
   return(
