@@ -9,16 +9,16 @@ import getUSer from '../../Functions/GithubUser';
 
 export function Input() {
 
-  const [name, setUsername] = useState('');
+  const [name, setUsername] = useState({});
 
   function handleSearch() {
     const user = name;
 
     const userObject = getUSer(user);
 
-    const login = Object.getOwnPropertyDescriptor(userObject, 'followers');
+    // const infos = Promise.
 
-    console.log(login)
+    // console.log(infos)
 
     /* CONTINUAR AQUI 01/11 ################# */
   }
