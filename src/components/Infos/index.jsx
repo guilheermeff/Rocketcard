@@ -6,16 +6,23 @@ import { BiBuildings, BiBookBookmark } from 'react-icons/bi';
 
 import getUSer from '../../Functions/GithubUser';
 
+
 export function Input() {
 
-  const [name, setUsername] = useState(' ');
+  const [name, setUsername] = useState('');
 
   function handleSearch() {
     const user = name;
 
     const userObject = getUSer(user);
 
-    console.log(userObject.followers);
+    const public_repos = userObject.then(data => data.public_repos);
+    const following = userObject.then(data => data.following);
+    const followers = userObject.then(data => data.followers);
+    const location = userObject.then(data => data.location);
+    const login = userObject.then(data => data.login);
+
+    console.log(login, following, followers, location, public_repos);
   }
 
   return(
