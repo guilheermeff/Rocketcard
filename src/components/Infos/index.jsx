@@ -16,13 +16,11 @@ export function Input() {
 
     const userObject = getUSer(user);
 
-    const public_repos = userObject.then(data => data.public_repos);
-    const following = userObject.then(data => data.following);
-    const followers = userObject.then(data => data.followers);
-    const location = userObject.then(data => data.location);
-    const login = userObject.then(data => data.login);
+    const login = Object.getOwnPropertyDescriptor(userObject, 'followers');
 
-    console.log(login, following, followers, location, public_repos);
+    console.log(login)
+
+    /* CONTINUAR AQUI 01/11 ################# */
   }
 
   return(
