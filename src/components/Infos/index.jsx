@@ -8,13 +8,16 @@ import getUSer from '../../Functions/GithubUser';
 
 export function Input() {
 
-  const [username, setUsername] = useState({});
+  const [name, setUsername] = useState(' ');
 
   function handleSearch() {
-    const user = getUSer(username);
-    return user;
+    const user = name;
+
+    const userObject = getUSer(user);
+
+    console.log(userObject.followers);
   }
-  
+
   return(
     <Box>
       <input 
