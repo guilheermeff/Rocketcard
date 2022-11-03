@@ -9,16 +9,26 @@ import getUSer from '../../Functions/GithubUser';
 
 export function Input() {
 
-  const [name, setUsername] = useState({});
+  const [name, setUsername] = useState('');
 
   function handleSearch() {
     const user = name;
 
     const userObject = getUSer(user);
 
-    // const infos = Promise.
+    console.log(userObject)
 
-    // console.log(infos)
+    const login = userObject.then(data => data.login);
+    const followers = userObject.then(data => data.followers);
+    const following = userObject.then(data => data.following);
+    const location = userObject.then(data => data.location);
+    const public_repos = userObject.then(data => data.public_repos);
+
+    console.log(login)
+    console.log(followers)
+    console.log(following)
+    console.log(location)
+    console.log(public_repos)
 
     /* CONTINUAR AQUI 01/11 ################# */
   }
