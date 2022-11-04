@@ -1,27 +1,12 @@
-function getUSer(username) {
+class GithubUser {
+  static getuser(username) {
 
-  try {
-
-    const endPoint = `https://api.github.com/users/${username}`;
-
-    return fetch(endPoint)
-    .then(data => data.json())
-    .then(data => {
-      
-      const { login, followers, following, public_repos, location } = data;
+      const endPoint = `https://api.github.com/users/${username}`;
   
-      return {
-        login,
-        followers,
-        following,
-        public_repos,
-        location
-      }
-    });
-
-  } catch(err) {
-    alert("Erro! Tente novamente.");
+      return fetch(endPoint)
+              .then(data => data.json())
+              .then(({ login, following, followers, location, public_repos }) => ({ login, following, followers, location, public_repos }))
   }
 }
 
-export default getUSer;
+export default GithubUser;
