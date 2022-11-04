@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 
-import { Input } from '../Infos';
+import { Input } from '../Input';
 
 export function Search() {
   return(
