@@ -1,35 +1,36 @@
+import GithubUser from '../../Functions/GithubUser';
+import { FiSearch } from 'react-icons/fi';
+import { useState } from 'react';
 
+import { Box, Button } from './styles';
 
-// import { FiSearch } from 'react-icons/fi';
-// import { useState } from 'react';
+export function Input() {
 
-// import getUSer from '../../Functions/GithubUser';
+  const [name, setUsername] = useState('');
 
+  function handleSearch() {
 
-// function Input() {
+    localStorage.removeItem("user");
 
-//   const [username, setUsername] = useState(" ");
-  
-//   function handleSearch() {
-//     const user = getUSer(username);
-//     console.log(user)
-//     return
-//   }
+    const user = name;
 
-//   return(
-//     <Container>
-//       <input 
-//         type="text" 
-//         placeholder="Username"
-//         onChange={e => setUsername(e.target.value)}
-//       />
-//       <Button 
-//         onClick={handleSearch}
-//       >
-//         <FiSearch />
-//       </Button>
-//     </Container>
-//   )
-// }
+    GithubUser.getuser(user).then(data => {
+      localStorage.setItem("user", JSON.stringify(data));
+    });
+  }
 
-// export { Input }
+  return(
+    <Box>
+      <input 
+        type="text" 
+        placeholder="Username"
+        onChange={e => setUsername(e.target.value)}
+      />
+      <Button 
+        onClick={handleSearch}
+      >
+        <FiSearch />
+      </Button>
+    </Box>
+  )
+}
