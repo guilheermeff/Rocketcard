@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { Container, List, Li } from "./styles";
 
 import { FiMapPin, FiUsers} from 'react-icons/fi';
@@ -6,17 +6,19 @@ import { BiBuildings, BiBookBookmark } from 'react-icons/bi';
 
 export function Infos() {
 
-  const user = localStorage.getItem("user");
-  const userObj = JSON.parse(user)
+  const following = localStorage.getItem("@Rocketcard:following");
+  const followers = localStorage.getItem("@Rocketcard:followers");
+  const location = localStorage.getItem("@Rocketcard:location");
+  const public_repos = localStorage.getItem("@Rocketcard:public_repos");
 
   return(
     <Container>
       <List>
-        <Li> <FiUsers /> Seguidores </Li>
-        <Li> <FiUsers /> Seguindo </Li>
-        <Li> <BiBookBookmark /> Repositórios </Li>
+        <Li> <FiUsers />{following} seguindo </Li>
+        <Li> <FiUsers />{followers} seguidores </Li>
+        <Li> <BiBookBookmark />{public_repos} repositórios </Li>
         <Li> <BiBuildings /> @Rocketseat </Li>
-        <Li> <FiMapPin /></Li>
+        <Li> <FiMapPin /> {location} </Li>
       </List>
     </Container>
   )
