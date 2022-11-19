@@ -1,10 +1,12 @@
 import { Container, Inner } from "./styles";
-
 import { Infos } from '../Infos';
-
+import { Avatar } from "../Avatar";
 import logo from "../../assets/logo.svg";
 
 export function Card() {
+
+  const user = localStorage.getItem('@Rocketcard:login');
+
   return(
     <Container id="frame">
       <Inner>
@@ -12,11 +14,11 @@ export function Card() {
           <div>
             <img src={logo} alt="imagem da logomarca rocketseat" />
           </div>
-          <h1>guilheermeff</h1>
+          <h1>{user}</h1>
         </header>
 
         <main>
-          <img src="https://github.com/guilheermeff.png" alt="imagem de perfil do usuário" />
+          <Avatar />
 
           <Infos />
         </main>
