@@ -1,22 +1,14 @@
-import GithubUser from '../../Functions/GithubUser';
 import { FiSearch } from 'react-icons/fi';
 import { useState } from 'react';
-
 import { Box, Button } from './styles';
+import getUser from '../../Functions/GithubUser'
 
 export function Input() {
 
   const [name, setUsername] = useState('');
 
   function handleSearch() {
-
-    localStorage.removeItem("user");
-
-    const user = name;
-
-    GithubUser.getuser(user).then(data => {
-      localStorage.setItem("user", JSON.stringify(data));
-    });
+    getUser(name);
   }
 
   return(
