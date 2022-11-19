@@ -18,5 +18,4 @@ function getUser(username) {
   setTimeout(() => location.reload(), 550);
 }
 
-
 export default getUser;
